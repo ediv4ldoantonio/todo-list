@@ -1,11 +1,11 @@
 <!-- Header -->
-<div class="d-flex justify-content-center align-items-center header">
+<div class="d-flex justify-content-center align-items-center vh-25 header">
   <i class="bi bi-journal-text me-2 icon"></i>
-  <h1 class="mb-0 text-light">Lista de Tarefas</h1>
+  <h1 class="mb-0 fw-bold text-light">Lista de Tarefas</h1>
 </div>
 
 <!-- Task Input -->
-<div class="container mb-5 task-input-group">
+<div class="container mb-5 task-input-group px-4">
   <div class="d-flex justify-content-center align-items-center mb-3">
     <input
       type="text"
@@ -13,24 +13,24 @@
       placeholder="Adicione uma nova tarefa"
       [(ngModel)]="newTask"
     />
-    <button class="btn btn-primary" (click)="addTask()">
-      <span class="me-2">Criar</span>
+    <button class="btn btn-primary py-2 py-sm-3 px-4" (click)="addTask()">
+      <span class="me-2 d-none d-lg-inline">Criar</span>
       <i class="bi bi-plus-circle"></i>
     </button>
   </div>
 </div>
 
 <!-- Tab Group -->
-<div class="container mb-5 tab-group">
+<div class="container mb-5 px-4">
   <div class="d-flex justify-content-between">
     <div class="d-flex align-items-center">
-      <span class="me-3" style="color: #7733ff">Criadas</span>
+      <span class="me-3 fw-bold" style="color: #7733ff">Criadas</span>
       <span class="badge rounded-pill" style="background-color: #7733ff">{{
         incompleteTasksCount
       }}</span>
     </div>
     <div>
-      <span class="me-3" style="color: #479c6e">Concluídas</span>
+      <span class="me-3 fw-bold" style="color: #479c6e">Concluídas</span>
       <span class="badge rounded-pill" style="background-color: #479c6e">{{
         completedTasksCount
       }}</span>
@@ -40,9 +40,10 @@
 </div>
 
 <!-- Task List -->
-<div class="container task-list">
+<div class="container px-4">
   @for (task of tasks; track tasks) {
   <task-item
+    (key)="(task.id)"
     [task]="task"
     (delete)="deleteTask($event)"
     (toggle)="toggleTask($event)"
@@ -50,7 +51,7 @@
   } @empty {
   <div class="container mb-5 no-tasks text-center">
     <i class="bi bi-clipboard" style="font-size: 48px; color: #e0dce4"></i>
-    <p style="font-weight: 700">Você ainda não tem tarefas cadastradas</p>
+    <p class="fw-bold mb-1">Você ainda não tem tarefas cadastradas</p>
     <p>Crie tarefas e organize seus itens a fazer</p>
   </div>
   }
