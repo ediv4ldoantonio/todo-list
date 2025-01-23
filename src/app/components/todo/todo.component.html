@@ -1,37 +1,46 @@
-<div>
-  <div class="d-flex justify-content-center align-items-center header">
-    <i class="bi bi-journal-text me-2 icon"></i>
-    <h1 class="mb-0 text-light">Lista de Tarefas</h1>
+<!-- Header -->
+<div class="d-flex justify-content-center align-items-center header">
+  <i class="bi bi-journal-text me-2 icon"></i>
+  <h1 class="mb-0 text-light">Lista de Tarefas</h1>
+</div>
+
+<!-- Task Input -->
+<div class="container mb-5 task-input-group">
+  <div class="d-flex justify-content-center align-items-center mb-3">
+    <input
+      type="text"
+      class="form-control me-2"
+      placeholder="Adicione uma nova tarefa"
+      [(ngModel)]="newTask"
+    />
+    <button class="btn btn-primary" (click)="addTask()">
+      <span class="me-2">Criar</span>
+      <i class="bi bi-plus-circle"></i>
+    </button>
   </div>
-  <div class="container mb-5 task-input-group">
-    <div class="d-flex justify-content-center align-items-center mb-3">
-      <input
-        type="text"
-        class="form-control me-2"
-        placeholder="Adicione uma nova tarefa"
-        [(ngModel)]="newTask"
-      />
-      <button class="btn btn-primary" (click)="addTask()">
-        <span class="me-2">Criar</span>
-        <i class="bi bi-plus-circle"></i>
-      </button>
+</div>
+
+<!-- Tab Group -->
+<div class="container mb-5 tab-group">
+  <div class="d-flex justify-content-between">
+    <div class="d-flex align-items-center">
+      <span class="me-3" style="color: #7733ff">Criadas</span>
+      <span class="badge rounded-pill" style="background-color: #7733ff"
+        >14</span
+      >
+    </div>
+    <div>
+      <span class="me-3" style="color: #479c6e">Concluídas</span>
+      <span class="badge rounded-pill" style="background-color: #479c6e"
+        >14</span
+      >
     </div>
   </div>
-  <div class="container mb-5 tab-group">
-    <div class="d-flex justify-content-between">
-      <div class="d-flex align-items-center">
-        <span class="me-3" style="color: #7733ff">Criadas</span>
-        <span class="badge rounded-pill" style="background-color: #7733ff"
-          >14</span
-        >
-      </div>
-      <div>
-        <span class="me-3" style="color: #479c6e">Concluídas</span>
-        <span class="badge rounded-pill" style="background-color: #479c6e"
-          >14</span
-        >
-      </div>
-    </div>
-    <hr />
-  </div>
+  <hr />
+</div>
+
+<div class="container mb-5 no-tasks text-center">
+  <i class="bi bi-clipboard" style="font-size: 48px; color: #e0dce4"></i>
+  <p style="font-weight: 700">Você ainda não tem tarefas cadastradas</p>
+  <p>Crie tarefas e organize seus itens a fazer</p>
 </div>

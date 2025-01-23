@@ -32,7 +32,17 @@
 }
 
 .tab-group {
-  margin-top: 100px;
+  margin-top: 70px;
   font-weight: bold;
   padding: 0 15%;
+}
+
+.no-tasks {
+  padding: 0 15%;
+}
+
+.no-tasks p {
+  font-size: 14px;
+  color: #6b6572;
+  margin: 0;
 }
