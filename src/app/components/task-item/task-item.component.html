@@ -1,4 +1,8 @@
-<li class="px-3 py-4 d-flex mb-2 justify-content-between task-item">
+<li
+  class="px-3 py-4 d-flex mb-2 justify-content-between task-item  {{
+    task.isCompleted ? 'completed' : ''
+  }}"
+>
   <div class="d-flex w-100 align-items-start">
     <input
       type="checkbox"
@@ -6,10 +10,7 @@
       (change)="onToggle()"
       class="me-3 form-check-input checkbox"
     />
-    <span
-      class="flex-grow-1 text-wrap {{ task.isCompleted ? 'completed' : '' }}"
-      >{{ task.title }}</span
-    >
+    <span class="flex-grow-1 text-wrap">{{ task.title }}</span>
     <button class="delete-button" (click)="onDelete()">
       <i class="bi bi-trash"></i>
     </button>

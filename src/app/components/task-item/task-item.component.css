@@ -3,17 +3,49 @@
   background-color: #e0dce4;
   border-radius: 8px;
   color: #262428;
+  border: 2px solid #d1cbd7;
+  cursor: pointer;
 }
 
-.task-item .completed {
+.task-item.completed {
+  background-color: transparent !important;
   text-decoration: line-through;
+  border: 2px solid #e0dce4;
   color: #6b6572;
 }
 
-.checkbox {
+input[type="checkbox"].checkbox {
   border-radius: 50%;
   cursor: pointer;
   font-size: 20px;
+  border: 2px solid #9359f3 !important;
+  background: transparent;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+input[type="checkbox"].checkbox:checked {
+  background-color: #479c6e !important;
+  border: transparent !important;
+  box-shadow: none;
+  color: white !important;
+}
+
+input[type="checkbox"].checkbox:checked::after {
+  content: "\2713";
+  font-size: 16px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox:focus {
+  box-shadow: none;
 }
 
 .delete-button {
@@ -27,4 +59,8 @@
   font-size: 18px;
   margin: 10px;
   color: #6b6572;
+}
+
+.delete-button i:hover {
+  color: #c2464d;
 }

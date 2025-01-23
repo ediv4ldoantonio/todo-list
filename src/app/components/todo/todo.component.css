@@ -17,11 +17,15 @@
   height: 60px;
   font-weight: 300;
   border-radius: 10px;
+  border: 2px solid #e0dce4;
+  background: #f4f2ff;
+  color: #6b6572;
 }
 
 .task-input-group input:focus {
-  border: 2px solid #7733ff;
-  border-radius: 5px;
+  border: 2px solid #7733ff !important;
+  box-shadow: none !important;
+  color: black;
 }
 
 .task-input-group button {
@@ -29,6 +33,10 @@
   background: #11b2fd;
   border: none;
   border-radius: 10px;
+}
+
+.task-input-group button:hover {
+  background: #0085d2;
 }
 
 .tab-group {
