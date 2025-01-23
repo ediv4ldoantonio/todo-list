@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { TodoComponent } from './components/todo/todo.component';
 
 @Component({
@@ -6,5 +6,6 @@ import { TodoComponent } from './components/todo/todo.component';
   imports: [TodoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {}

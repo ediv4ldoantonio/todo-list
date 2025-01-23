@@ -1,4 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ViewEncapsulation,
+} from '@angular/core';
 import { Task } from '../../models/task.model';
 
 @Component({
@@ -6,6 +12,7 @@ import { Task } from '../../models/task.model';
   templateUrl: './task-item.component.html',
   styleUrls: ['./task-item.component.css'],
   standalone: true,
+  encapsulation: ViewEncapsulation.None,
 })
 export class TaskItemComponent {
   @Input() task!: Task;

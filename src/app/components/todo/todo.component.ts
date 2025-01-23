@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../models/task.model';
 import { TaskItemComponent } from '../task-item/task-item.component';
@@ -14,6 +14,7 @@ import {
   styleUrls: ['./todo.component.css'],
   standalone: true,
   imports: [TaskItemComponent, FormsModule, DragDropModule],
+  encapsulation: ViewEncapsulation.None,
 })
 export class TodoComponent {
   tasks: Task[] = [];
