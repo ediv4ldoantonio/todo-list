@@ -1,5 +1,7 @@
 # Lista de Tarefas
 
+Este projeto é uma aplicação responsiva de tarefas com criação, exclusão e conclusão de itens. Além disso, possui a funcionalidade de ordenar tarefas utilizando drag and drop.
+
 Este projeto foi gerado usando [Angular CLI](https://github.com/angular/angular-cli) versão 19.1.4.
 
 ## Instalação de Dependências
