@@ -41,3 +41,21 @@
   color: #6b6572;
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  .header {
+    height: 200px;
+  }
+
+  .task-input-group {
+    width: 70%;
+  }
+
+  .tab-group {
+    width: 70%;
+  }
+
+  .task-list {
+    width: 70%;
+  }
+}

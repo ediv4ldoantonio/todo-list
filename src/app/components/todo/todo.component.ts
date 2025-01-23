@@ -17,13 +17,6 @@ export class TodoComponent {
 
   constructor(private taskService: TaskService) {
     this.tasks = this.taskService.getTasks();
-
-    this.tasks.push({
-      id: this.tasks.length + 1,
-      title:
-        'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-      isCompleted: false,
-    });
   }
 
   addTask(): void {

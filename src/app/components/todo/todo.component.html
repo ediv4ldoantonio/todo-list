@@ -5,7 +5,7 @@
 </div>
 
 <!-- Task Input -->
-<div class="container mb-5 task-input-group px-4">
+<div class="mb-5 task-input-group px-4 mx-auto">
   <div class="d-flex justify-content-center align-items-center mb-3">
     <input
       type="text"
@@ -13,15 +13,18 @@
       placeholder="Adicione uma nova tarefa"
       [(ngModel)]="newTask"
     />
-    <button class="btn btn-primary py-2 py-sm-3 px-4" (click)="addTask()">
-      <span class="me-2 d-none d-lg-inline">Criar</span>
+    <button
+      class="btn btn-primary py-2 py-sm-3 px-4 d-md-flex"
+      (click)="addTask()"
+    >
+      <span class="me-2 d-none d-md-flex">Criar</span>
       <i class="bi bi-plus-circle"></i>
     </button>
   </div>
 </div>
 
 <!-- Tab Group -->
-<div class="container mb-5 px-4">
+<div class="container mb-5 px-4 tab-group">
   <div class="d-flex justify-content-between">
     <div class="d-flex align-items-center">
       <span class="me-3 fw-bold" style="color: #7733ff">Criadas</span>
@@ -40,7 +43,7 @@
 </div>
 
 <!-- Task List -->
-<div class="container px-4">
+<div class="container px-4 task-list mb-5">
   @for (task of tasks; track tasks) {
   <task-item
     (key)="(task.id)"
