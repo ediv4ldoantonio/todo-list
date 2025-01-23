@@ -39,8 +39,15 @@
   <hr />
 </div>
 
-<div class="container mb-5 no-tasks text-center">
-  <i class="bi bi-clipboard" style="font-size: 48px; color: #e0dce4"></i>
-  <p style="font-weight: 700">Você ainda não tem tarefas cadastradas</p>
-  <p>Crie tarefas e organize seus itens a fazer</p>
+<!-- Task List -->
+<div class="container task-list">
+  @for (task of tasks; track tasks) {
+  <task-item [task]="task" />
+  } @empty {
+  <div class="container mb-5 no-tasks text-center">
+    <i class="bi bi-clipboard" style="font-size: 48px; color: #e0dce4"></i>
+    <p style="font-weight: 700">Você ainda não tem tarefas cadastradas</p>
+    <p>Crie tarefas e organize seus itens a fazer</p>
+  </div>
+  }
 </div>
