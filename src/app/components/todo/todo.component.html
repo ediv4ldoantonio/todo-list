@@ -25,15 +25,15 @@
   <div class="d-flex justify-content-between">
     <div class="d-flex align-items-center">
       <span class="me-3" style="color: #7733ff">Criadas</span>
-      <span class="badge rounded-pill" style="background-color: #7733ff"
-        >14</span
-      >
+      <span class="badge rounded-pill" style="background-color: #7733ff">{{
+        incompleteTasksCount
+      }}</span>
     </div>
     <div>
       <span class="me-3" style="color: #479c6e">Concluídas</span>
-      <span class="badge rounded-pill" style="background-color: #479c6e"
-        >14</span
-      >
+      <span class="badge rounded-pill" style="background-color: #479c6e">{{
+        completedTasksCount
+      }}</span>
     </div>
   </div>
   <hr />
@@ -42,7 +42,11 @@
 <!-- Task List -->
 <div class="container task-list">
   @for (task of tasks; track tasks) {
-  <task-item [task]="task" />
+  <task-item
+    [task]="task"
+    (delete)="deleteTask($event)"
+    (toggle)="toggleTask($event)"
+  />
   } @empty {
   <div class="container mb-5 no-tasks text-center">
     <i class="bi bi-clipboard" style="font-size: 48px; color: #e0dce4"></i>

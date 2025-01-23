@@ -48,4 +48,12 @@ export class TodoComponent {
     this.taskService.updateTask(id, title);
     this.tasks = this.taskService.getTasks();
   }
+
+  public get completedTasksCount(): number {
+    return this.tasks.filter((task) => task.isCompleted).length;
+  }
+
+  public get incompleteTasksCount(): number {
+    return this.tasks.filter((task) => !task.isCompleted).length;
+  }
 }
