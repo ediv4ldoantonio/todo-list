@@ -3,13 +3,17 @@ import { TaskService } from '../../services/task.service';
 import { Task } from '../../models/task.model';
 import { TaskItemComponent } from '../task-item/task-item.component';
 import { FormsModule } from '@angular/forms';
-
+import {
+  DragDropModule,
+  CdkDragDrop,
+  moveItemInArray,
+} from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css'],
   standalone: true,
-  imports: [TaskItemComponent, FormsModule],
+  imports: [TaskItemComponent, FormsModule, DragDropModule],
 })
 export class TodoComponent {
   tasks: Task[] = [];
@@ -40,6 +44,10 @@ export class TodoComponent {
   editTask({ id, title }: { id: number; title: string }): void {
     this.taskService.updateTask(id, title);
     this.tasks = this.taskService.getTasks();
+  }
+
+  drop(event: CdkDragDrop<any[]>): void {
+    moveItemInArray(this.tasks, event.previousIndex, event.currentIndex);
   }
 
   public get completedTasksCount(): number {

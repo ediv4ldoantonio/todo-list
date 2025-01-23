@@ -43,13 +43,18 @@
 </div>
 
 <!-- Task List -->
-<div class="container px-4 task-list mb-5">
+<div
+  cdkDropList
+  class="container px-4 task-list mb-5"
+  (cdkDropListDropped)="drop($event)"
+>
   @for (task of tasks; track tasks) {
   <task-item
     (key)="(task.id)"
     [task]="task"
     (delete)="deleteTask($event)"
     (toggle)="toggleTask($event)"
+    cdkDrag
   />
   } @empty {
   <div class="container mb-5 no-tasks text-center">
